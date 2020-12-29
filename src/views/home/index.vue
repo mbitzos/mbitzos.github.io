@@ -46,7 +46,7 @@
         <div class="text-block">
           <div>I make games with my friends</div>
           <div>we're called overlook studios</div>
-          <div>We use using unity 2019</div>
+          <div>we use unity 2019</div>
           <div>
             <a href="https://overlook-studios.com" target="_blank"
               >check us out</a
