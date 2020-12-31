@@ -1,24 +1,6 @@
-# website
+This is the repo for my website located at: http://michaelbitzos.com.
 
-## Project setup
-```
-npm install
-```
+Built with Vue 3 and Typescript because I wanna play around with it.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+Changes incoming...
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
