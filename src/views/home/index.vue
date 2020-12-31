@@ -28,7 +28,7 @@
           <div>i work full-stack with vue.js & java</div>
           <div>
             here's my
-            <a href="./resume.pdf" target="_blank">resume</a>
+            <a href="./Michael-Bitzos-Resume.pdf" target="_blank">resume</a>
           </div>
           <div>
             here's my
