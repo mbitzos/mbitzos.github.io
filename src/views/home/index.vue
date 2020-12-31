@@ -24,7 +24,7 @@
         <div class="text-block-header header">
           i'm a software developer professionally.
         </div>
-        <div class="text-block" style="text-align: right">
+        <div class="text-block">
           <div>i work full-stack with vue.js & java</div>
           <div>
             here's my
@@ -63,6 +63,7 @@
         </div>
       </div>
     </div>
+    <hr id="hr-3" />
     <div id="contact">
       <div class="header">contact me</div>
       <div class="row">
@@ -79,24 +80,21 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-export default defineComponent({
-  name: "Home",
-  data: () => {
-    return {};
-  }
-});
+export default defineComponent({});
 </script>
 
 <style lang="scss" scoped>
+/** Vars **/
 $pink: #f464d5;
 
 img {
   user-select: none;
 }
 
-$start-grad: white 40%;
-$end-grad: rgba($pink, 0.5) 100%;
 hr {
+  $start-grad: white 40%;
+  $end-grad: rgba($pink, 0.5) 100%;
+
   width: 100%;
   height: 1px;
   border: none;
@@ -159,6 +157,7 @@ a {
   border-radius: 50%;
   overflow: hidden;
   position: relative;
+  flex-shrink: 0;
 
   img {
     width: 100%;
@@ -193,8 +192,12 @@ a {
 
 .icon-container {
   div {
-    width: 100px;
-    height: 100px;
+    width: 10vw;
+    height: 10vw;
+    min-width: 50px;
+    min-height: 50px;
+    max-width: 100px;
+    max-height: 100px;
     border-radius: 50%;
     border: 1px solid rgba(black, 0.1);
     overflow: hidden;
@@ -234,6 +237,13 @@ a {
     }
   }
 }
+
+#software-developer {
+  .text-block,
+  .text-block-header {
+    text-align: right;
+  }
+}
 #contact {
   text-align: center;
   font-size: 24px;
@@ -250,6 +260,91 @@ a {
     width: 120px;
     a {
       font-size: 18px;
+    }
+  }
+}
+/** Responsive **/
+// Makes the icons more compact (stacked)
+@media only screen and (max-width: 650px) {
+  .content {
+    #software-developer,
+    #game-developer {
+      align-items: flex-end;
+    }
+  }
+  .icon-container {
+    flex-direction: column;
+    align-items: flex-end;
+
+    div {
+      width: 5vw;
+      height: 5vw;
+      min-width: 50px;
+      min-height: 50px;
+
+      &:not(:last-child) {
+        margin-right: 0;
+      }
+
+      &:not(:first-child) {
+        margin-top: 10px;
+      }
+    }
+  }
+}
+/** MOBILE **/
+$mobile-size: 600px;
+@media only screen and (min-width: $mobile-size) {
+  #hr-3 {
+    display: none;
+  }
+}
+@media only screen and (max-width: $mobile-size) {
+  #header {
+    // display: none;
+    flex-direction: column;
+    text-align: center;
+
+    #header-text {
+      .name {
+        font-size: 10vw;
+      }
+    }
+  }
+
+  .headshot-container {
+    margin-top: 20px;
+    width: 80vw;
+    height: 80vw;
+  }
+
+  #software-developer {
+    flex-direction: row-reverse;
+
+    .text-block,
+    .text-block-header {
+      text-align: left;
+    }
+  }
+
+  hr {
+    &#hr-1,
+    &#hr-2,
+    &#hr-3 {
+      background: linear-gradient(90deg, $pink 0%, white 75%);
+    }
+  }
+
+  .icon-container {
+    margin-left: 10px;
+  }
+
+  #contact {
+    text-align: left;
+    margin-top: 0;
+
+    .row {
+      justify-content: flex-start;
     }
   }
 }

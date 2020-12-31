@@ -21,6 +21,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
+/** FONTS **/
 @font-face {
   font-family: "Akagi";
   src: local("Akagi"), url(./assets/fonts/AkagiPro-Light.ttf) format("truetype");
@@ -29,31 +30,6 @@ export default defineComponent({
   font-family: "Akagi-Black";
   src: local("Akagi-Black"),
     url(./assets/fonts/AkagiPro-Black.ttf) format("truetype");
-}
-body,
-html,
-#app {
-  height: 100%;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-#app {
-  font-family: Akagi, Helvetica, Arial, sans-serif;
-  text-transform: lowercase;
-  color: black;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-
-#body {
-  width: 45%;
-  height: 100%;
-  padding-top: 50px;
-  padding-bottom: 50px;
-  box-sizing: border-box;
 }
 
 // Some flex box utilities
@@ -67,5 +43,65 @@ html,
 
 .col {
   flex-direction: column;
+}
+// Some flex box utilities
+
+body,
+html,
+#app {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+#app {
+  font-family: Akagi, Helvetica, Arial, sans-serif;
+  text-transform: lowercase;
+  color: black;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  overflow: auto;
+}
+
+#body {
+  width: 45%;
+  height: 100vh;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  box-sizing: border-box;
+}
+
+/** Responsive **/
+@media only screen and (max-width: 1400px) {
+  #body {
+    width: 50%;
+  }
+}
+@media only screen and (max-width: 1300px) {
+  #body {
+    width: 60%;
+  }
+}
+@media only screen and (max-width: 1100px) {
+  #body {
+    width: 70%;
+  }
+}
+@media only screen and (max-width: 900px) {
+  #body {
+    width: 80%;
+  }
+}
+@media only screen and (max-width: 800px) {
+  #body {
+    width: 85%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #body {
+    height: 100%;
+  }
 }
 </style>
