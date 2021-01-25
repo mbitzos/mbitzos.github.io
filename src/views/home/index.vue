@@ -7,7 +7,6 @@
       </div>
       <div class="headshot-container">
         <img src="@/assets/face1.jpg" />
-        <img src="@/assets/face2.jpg" />
       </div>
     </div>
     <hr id="hr-1" />
@@ -166,27 +165,6 @@ a {
     top: 0;
     left: 0;
     transition: 0.5s opacity;
-  }
-  img {
-    &:first-child {
-      opacity: 1;
-    }
-
-    &:nth-child(2) {
-      opacity: 0;
-    }
-  }
-
-  &:hover {
-    img {
-      &:first-child {
-        opacity: 0;
-      }
-
-      &:nth-child(2) {
-        opacity: 1;
-      }
-    }
   }
 }
 
