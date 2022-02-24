@@ -2,7 +2,7 @@
   <div class="content col">
     <div id="header" class="row">
       <div id="header-text" class="col">
-        <div class="hey">hey</div>
+        <div class="hey">hey,</div>
         <div class="name">i'm michael bitzos.</div>
       </div>
       <div class="headshot-container">
@@ -12,10 +12,16 @@
     <hr id="hr-1" />
     <div id="software-developer" class="row">
       <div class="icon-container row">
-        <div id="vue">
+        <div id="python">
+          <img src="@/assets/python.png" />
+        </div>
+        <div id="mongo">
+          <img src="@/assets/mongodb.jpg" />
+        </div>
+        <div id="vue" class="small">
           <img src="@/assets/vue-logo.png" />
         </div>
-        <div id="java">
+        <div id="java" class="small">
           <img src="@/assets/java-logo.svg" />
         </div>
       </div>
@@ -24,7 +30,8 @@
           i'm a software developer professionally.
         </div>
         <div class="text-block">
-          <div>i work full-stack with vue.js & java</div>
+          <div>i currently work with python & mongodb.</div>
+          <div>i used to do a lot of vue.js & java.</div>
           <div>
             here's my
             <a href="./Michael-Bitzos-Resume.pdf" target="_blank">resume</a>
@@ -43,14 +50,9 @@
           i'm a game developer on the side.
         </div>
         <div class="text-block">
-          <div>I make games with my friends</div>
-          <div>we're called overlook studios</div>
-          <div>we use unity 2019</div>
-          <div>
-            <a href="https://overlook-studios.com" target="_blank"
-              >check us out</a
-            >
-          </div>
+          <div>I make games with my friends.</div>
+          <div>we're called overlook studios.</div>
+          <div>we use unity 2019.</div>
         </div>
       </div>
       <div class="icon-container row">
@@ -169,6 +171,7 @@ a {
 }
 
 .icon-container {
+  align-items: center;
   div {
     width: 10vw;
     height: 10vw;
@@ -182,6 +185,11 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  .small {
+    width: 1vw;
+    height: 1vw;
   }
 
   div:not(:last-child) {
@@ -211,6 +219,17 @@ a {
   #vue {
     img {
       width: 65%;
+      margin-top: 10px;
+    }
+  }
+  #python {
+    img {
+      width: 70%;
+    }
+  }
+  #mongo {
+    img {
+      width: 100%;
       margin-top: 10px;
     }
   }
@@ -252,7 +271,7 @@ a {
   }
   .icon-container {
     flex-direction: column;
-    align-items: flex-end;
+    align-items: center;
 
     div {
       width: 5vw;
@@ -267,6 +286,12 @@ a {
       &:not(:first-child) {
         margin-top: 10px;
       }
+    }
+    .small {
+      width: 1vw;
+      height: 1vw;
+      min-height: 25px;
+      min-width: 25px;
     }
   }
 }
