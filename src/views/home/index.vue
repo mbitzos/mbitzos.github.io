@@ -6,23 +6,23 @@
         <div class="name">i'm michael bitzos.</div>
       </div>
       <div class="headshot-container">
-        <img src="@/assets/face1.jpg" />
+        <img src="@/assets/about/face1.jpg" />
       </div>
     </div>
-    <hr id="hr-1" />
+    <hr id="hr-1" class="gradient-line left" />
     <div id="software-developer" class="row">
       <div class="icon-container row">
         <div id="python">
-          <img src="@/assets/python.png" />
+          <img src="@/assets/about/python.png" />
         </div>
         <div id="mongo">
-          <img src="@/assets/mongodb.jpg" />
+          <img src="@/assets/about/mongodb.jpg" />
         </div>
         <div id="vue" class="small">
-          <img src="@/assets/vue-logo.png" />
+          <img src="@/assets/about/vue-logo.png" />
         </div>
         <div id="java" class="small">
-          <img src="@/assets/java-logo.svg" />
+          <img src="@/assets/about/java-logo.svg" />
         </div>
       </div>
       <div>
@@ -43,24 +43,31 @@
         </div>
       </div>
     </div>
-    <hr id="hr-2" />
+    <hr id="hr-2" class="gradient-line right" />
     <div id="game-developer" class="row">
       <div>
         <div class="text-block-header header">
           i'm a game developer on the side.
         </div>
         <div class="text-block">
-          <div>I make games with my friends.</div>
-          <div>we're called overlook studios.</div>
-          <div>we use unity 2019.</div>
+          <div>
+            i'm writing blogs about my experience
+            <router-link to="devblog">here.</router-link>
+          </div>
+          <div>
+            been makin' things in unity 2<span style="text-transform:initial"
+              >D</span
+            >
+            for a while.
+          </div>
         </div>
       </div>
       <div class="icon-container row">
         <div id="unity">
-          <img src="@/assets/unity-logo.png" />
+          <img src="@/assets/about/unity-logo.png" />
         </div>
         <div id="overlook">
-          <img src="@/assets/os-logo.png" />
+          <img src="@/assets/about/os-logo.png" />
         </div>
       </div>
     </div>
@@ -85,38 +92,50 @@ export default defineComponent({});
 </script>
 
 <style lang="scss" scoped>
+// Some flex box utilities
+.row,
+.col {
+  display: flex;
+}
+.row {
+  flex-direction: row;
+}
+
+.col {
+  flex-direction: column;
+}
+// Some flex box utilities
 /** Vars **/
-$pink: #f464d5;
 
 img {
   user-select: none;
 }
 
 hr {
-  $start-grad: white 40%;
-  $end-grad: rgba($pink, 0.5) 100%;
-
-  width: 100%;
+  width: 50%;
   height: 1px;
   border: none;
   margin-top: 25px;
   margin-bottom: 25px;
 
   &#hr-1 {
-    background: linear-gradient(90deg, $start-grad, $end-grad);
     margin-top: 35px;
-  }
-  &#hr-2 {
-    background: linear-gradient(-90deg, $start-grad, $end-grad);
+    align-self: flex-end;
   }
 }
 .content {
   justify-content: space-between;
+  text-transform: lowercase;
 
   > .row {
     justify-content: space-between;
     align-items: center;
   }
+  width: 45%;
+  height: 100vh;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  box-sizing: border-box;
 }
 
 .text-block-header {
@@ -124,17 +143,6 @@ hr {
 }
 .text-block {
   font-size: 18px;
-}
-
-a {
-  color: $pink;
-  cursor: pointer;
-  text-decoration: none;
-  transition: 0.2s all;
-
-  &:hover {
-    text-decoration: underline;
-  }
 }
 
 #header {
@@ -334,7 +342,9 @@ $mobile-size: 600px;
     &#hr-1,
     &#hr-2,
     &#hr-3 {
-      background: linear-gradient(90deg, $pink 0%, white 75%);
+      align-self: flex-start;
+      background: linear-gradient(90deg, $pink 0%, white 100%);
+      width: 80%;
     }
   }
 
@@ -349,6 +359,38 @@ $mobile-size: 600px;
     .row {
       justify-content: flex-start;
     }
+  }
+}
+
+@media only screen and (max-width: 1400px) {
+  .content {
+    width: 50%;
+  }
+}
+@media only screen and (max-width: 1300px) {
+  .content {
+    width: 60%;
+  }
+}
+@media only screen and (max-width: 1100px) {
+  .content {
+    width: 70%;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .content {
+    width: 80%;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .content {
+    width: 85%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .content {
+    height: 100%;
   }
 }
 </style>

@@ -1,0 +1,57 @@
+// Bulma Import
+@import '~bulma';
+
+
+/** Variables **/
+$pink: #f464d5;
+$border-opacity: 0.5;
+$old-link: $link;
+$link: $pink;
+
+/** General **/
+html,
+#app {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  width: 100%;
+}
+
+a {
+  color: $pink;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.2s all;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+#app {
+  font-family: Akagi, Helvetica, Arial, sans-serif;
+  color: black;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  overflow: auto;
+}
+
+/** Components **/
+.gradient-line {
+  $start-grad: transparent 0%;
+  $end-grad: rgba($pink, 0.5) 100%;
+
+  &.left {
+    background: linear-gradient(90deg, $start-grad, $end-grad);
+  }
+
+  &.right {
+    background: linear-gradient(-90deg, $start-grad, $end-grad);
+  }
+}
