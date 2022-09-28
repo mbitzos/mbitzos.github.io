@@ -1,6 +1,6 @@
+// Template file for generation
 import { Post } from "@/types";
-import { default as One } from "./_posts/first-post";
+import { default as post0 } from "./generated-posts/first-post.meta";
 
-// TODO - make this dynamic so I dont have to write an import for every new post
-const posts: Array<Post> = [One];
+const posts: Array<Post> = [post0];
 export default posts;

@@ -6,7 +6,7 @@ Changes incoming...
 
 
 ### TODO
-- [ ] Build post generator framework
+- [x] Build post generator framework
 - [x] Responsive design
 - [ ] Article searching
 - [ ] better article sidebar

@@ -1,0 +1,10 @@
+import { Post } from "@/types";
+import { markRaw } from "vue";
+{{COMPONENT_IMPORT}}
+
+const post: Post = markRaw(
+  {{META_DATA}}
+);
+
+export default post;
+

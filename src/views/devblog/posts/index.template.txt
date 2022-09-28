@@ -1,0 +1,6 @@
+// Template file for generation
+import { Post } from "@/types";
+{{IMPORT_KEY}}
+
+const posts: Array<Post> = [{{POSTS}}];
+export default posts;
