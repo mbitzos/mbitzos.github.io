@@ -8,8 +8,8 @@ const post: Post = markRaw({
   subtitle:
     "a subtitle thats a bit longer but somethng we can continue tot alk about",
   mainImage: "about/python.png",
-  component: PostContent,
-  date: new Date("Wed Sep 28 2022 00:43:20 GMT-0400 (Eastern Daylight Time)")
+  date: new Date("2022-09-29T02:18:12.047Z"),
+  component: PostContent
 });
 
 export default post;
