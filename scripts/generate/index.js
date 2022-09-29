@@ -1,54 +1,29 @@
-// Generates the static pages //
+/** Generates the static pages **/
 
 /* eslint-disable */
 const fs = require("fs");
 const fsExtra = require('fs-extra');
 const path = require("path");
 const execa = require("execa");
+const { config, getPostNameAndType } = require("./utils");
+const {
+  POSTS_DIRECTORY,
+  RAW_POSTS_DIRECTORY,
+  GEN_POSTS_DIRECTORY,
+  ENCODING,
+  metaFileTemplate,
+  importTemplate
+} = require("./constants")
+const generators = require("./generators")
 
 
-const POSTS_DIRECTORY = "src/views/devblog/posts"
-const RAW_POSTS_DIRECTORY = path.join(POSTS_DIRECTORY, "raw-posts")
-const GEN_POSTS_DIRECTORY = path.join(POSTS_DIRECTORY, "generated-posts")
-const ENCODING = "utf-8"
-
-const metaFileTemplate = fs.readFileSync(path.join(POSTS_DIRECTORY, "post.meta.template.txt"), ENCODING)
-const postTemplate = fs.readFileSync(path.join(POSTS_DIRECTORY, "post.template.txt"), ENCODING)
-const importTemplate = fs.readFileSync(path.join(POSTS_DIRECTORY, "index.template.txt"), ENCODING)
-
-// ARGS //
+/** ARGS **/
 const args = new Set(process.argv.slice(2));
-
 // skips updating dates of posts w/ missing dates
 const SKIP_DATE_SETTING = args.has("--skip-date-setting")
-
 // if we only want to append new posts, ignore posts that were already generated
 const DIFF_MODE = args.has("--diff-mode")
 
-
-function config(text, kvps, wrapKey = true) {
-  /**
-   * Util to replace config keys
-   */
-  return Object.entries(kvps).reduce((prev, curr) => {
-    let key = curr[0]
-    key = wrapKey ? `{{${key}}}` : key
-    return prev.replace(key, curr[1])
-  }, text)
-}
-
-// Generators //
-function generateTextPost(rawPost) {
-  /**
-   * Generates a post given a .txt file
-   */
-  return config(postTemplate, { "POST_TEXT": rawPost })
-}
-
-// all supported generators
-const generators = {
-  "txt": generateTextPost
-}
 
 function generateMetaFile(metaData, postName) {
   /**
@@ -77,13 +52,6 @@ function generateMetaFile(metaData, postName) {
   })
 }
 
-function getPostNameAndType(fileName) {
-  /**
-   * Returns post name and post file type
-   */
-  const split = fileName.split(".")
-  return [split[0], split[split.length - 1]]
-}
 
 function generatePostPages() {
   /**
