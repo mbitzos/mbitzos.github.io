@@ -3,12 +3,12 @@ import { markRaw } from "vue";
 import PostContent from "./second-post.vue";
 
 const post: Post = markRaw({
-  key: "second-post",
   title: "this is a second post",
   subtitle: "asdasdsads",
   mainImage: "about/python.png",
-  date: new Date("Wed Sep 28 2022 22:35:24 GMT-0400 (Eastern Daylight Time)"),
-  component: PostContent
+  date: new Date("2022-09-29T02:35:24.347Z"),
+  component: PostContent,
+  key: "second-post"
 });
 
 export default post;
