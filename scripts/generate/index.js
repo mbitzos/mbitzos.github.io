@@ -17,12 +17,26 @@ const {
 const generators = require("./generators")
 
 
+function processArgs() {
+  /**
+   * Process arg into a map
+   * This covers args where we have keyword args
+   */
+  const args = {}
+  for (let arg of process.argv.slice(2)) {
+    const [k, v] = arg.split("=")
+    args[k] = v ?? true
+  }
+  return args
+}
+
+const ARGS = processArgs()
+
 /** ARGS **/
-const args = new Set(process.argv.slice(2));
 // skips updating dates of posts w/ missing dates
-const SKIP_DATE_SETTING = args.has("--skip-date-setting")
+const SKIP_DATE_SETTING = ARGS["skip-date"]
 // if we only want to append new posts, ignore posts that were already generated
-const DIFF_MODE = args.has("--diff-mode")
+const MODE = ARGS['mode'] || 'DIFF'
 
 
 function generateMetaFile(metaData, postName) {
@@ -77,7 +91,7 @@ function generatePostPages() {
     const [postName, postFileType] = getPostNameAndType(post)
 
     // diff mode, skip posts that already are generated
-    if (DIFF_MODE && existingPosts.has(postName)) {
+    if (MODE == "diff" && existingPosts.has(postName)) {
       console.log(`${postName} already exists, skipping`)
       continue
     }
@@ -135,14 +149,10 @@ function generatePostImports(posts) {
 function main() {
   console.log("Starting static page generation...");
 
-  if (DIFF_MODE) {
-    console.log("Starting with DIFF_MODE")
-  } else {
-    console.log("Starting with FULL_MODE")
-  }
+  console.log(`Starting with mode: ${MODE}`)
 
   // clear
-  if (!DIFF_MODE) {
+  if (MODE == "full") {
     console.log("Clearing generation folder")
     fsExtra.emptyDirSync(GEN_POSTS_DIRECTORY)
   }
