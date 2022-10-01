@@ -3,8 +3,14 @@ type Post = {
   title: string; // title of the post
   subtitle: string; // subtitle of the post
   date?: Date; // creation date of the post, will be auto generated
-  mainImage: string; // path to main image in @/assests/
+  mainImage?: PostImage; // main image of the post
   component?: any; // the actual component to render
 };
+type Style = Record<string, string>;
 
-export { Post };
+type PostImage = {
+  uri: string; // path to image in @/assets/
+  subtitle?: string; // text to display, will be put through v-html
+  style?: Style; // the style to apply to the image
+};
+export { Post, PostImage };

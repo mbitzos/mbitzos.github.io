@@ -6,24 +6,25 @@
       <span>
         {{
           post.date?.toLocaleDateString("en-US", {
-            weekday: "long",
             year: "numeric",
-            month: "long",
+            month: "numeric",
             day: "numeric"
           })
         }}
       </span>
     </div>
-    <div class="title-card">
-      <img :src="require(`@/assets/${post.mainImage}`)" />
-    </div>
+    <PostImageComponent :image="post.mainImage" v-if="post.mainImage" />
     <component class="main-content" :is="post.component" />
   </div>
 </template>
 <script lang="ts">
 import { defineComponent } from "vue";
+import PostImageComponent from "./image.vue";
 import { Post } from "@/types";
 export default defineComponent({
+  components: {
+    PostImageComponent
+  },
   props: {
     post: {
       type: Object as () => Post,
@@ -35,12 +36,6 @@ export default defineComponent({
 <style lang="scss">
 .subtitle {
   font-style: italic;
-}
-.title-card {
-  width: 100%;
-
-  img {
-    width: 100%;
-  }
+  margin-bottom: 0.5em;
 }
 </style>
