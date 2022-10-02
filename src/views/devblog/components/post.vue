@@ -1,19 +1,29 @@
 <template>
-  <div>
+  <div class="post">
     <div class="title is-2">{{ post.title }}</div>
-    <div class="subtitle is-5">{{ post.subtitle }}</div>
     <div>
-      <span>
+      <span class="datestamp">
         {{
           post.date?.toLocaleDateString("en-US", {
             year: "numeric",
-            month: "numeric",
+            month: "long",
             day: "numeric"
           })
         }}
       </span>
+      -
+      <span class="taggs">
+        <span class="tagg" v-for="tag in post.tags" :key="tag">
+          [{{ tag }}]
+        </span>
+      </span>
     </div>
-    <PostImageComponent :image="post.mainImage" v-if="post.mainImage" />
+    <PostImageComponent
+      class="main-image"
+      :image="post.mainImage"
+      v-if="post.mainImage"
+    />
+    <div class="main-divider" />
     <component class="main-content" :is="post.component" />
   </div>
 </template>
@@ -34,8 +44,36 @@ export default defineComponent({
 });
 </script>
 <style lang="scss">
-.subtitle {
-  font-style: italic;
-  margin-bottom: 0.5em;
+.post {
+  .main-content {
+    margin-top: 1em;
+  }
+  .main-image {
+    margin-top: 1em;
+  }
+  .main-divider {
+    width: 100%;
+    border: 1px solid rgba($pink, 0.2);
+    border-bottom: 0;
+    margin-top: 1em;
+  }
+  .title {
+    margin-bottom: 5px !important;
+  }
+  .subtitle {
+    font-style: italic;
+    margin-bottom: 0.5em !important;
+  }
+
+  .datestamp {
+    font-weight: bold;
+  }
+
+  .taggs {
+    .tagg {
+      color: gray;
+      font-weight: bold;
+    }
+  }
 }
 </style>

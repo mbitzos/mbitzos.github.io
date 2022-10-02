@@ -4,10 +4,8 @@ import PostContent from "./first-post.vue";
 
 const post: Post = markRaw({
   title: "This is a big title wow",
-  subtitle:
-    "a subtitle thats a bit longer but somethng we can continue tot alk about",
-  mainImage: "about/python.png",
   date: new Date("2022-09-29T02:18:12.047Z"),
+  tags: ["soemthing", "else", "test-sad"],
   component: PostContent,
   key: "first-post"
 });

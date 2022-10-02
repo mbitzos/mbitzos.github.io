@@ -10,5 +10,8 @@ Changes incoming...
 - [x] Responsive design
 - [ ] Article searching
 - [ ] better article sidebar
+- [ ] post specific generation
+- [ ] better post playground?
+- [ ] tag system
 
 so much more :)

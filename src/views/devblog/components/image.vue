@@ -19,7 +19,6 @@ export default defineComponent({
 <style lang="scss">
 .post-image {
   width: 100%;
-  margin-bottom: 1em;
   text-align: center;
   img {
     width: auto;

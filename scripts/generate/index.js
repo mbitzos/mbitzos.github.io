@@ -55,6 +55,12 @@ function generateMetaFile(metaData, postName) {
 
   metaData['date'] = `${DATE_KEY}`  // hacky way to insert the date
   metaData['key'] = postName
+
+  // fix tags 
+  let tags = metaData['tags'] || "null"
+  tags = typeof tags === "string" ? tags.split(",") : tags
+  metaData['tags'] = tags
+
   let metaDataStr = JSON.stringify(metaData)
   let options = {}
   options[`"${IMPORT_KEY}"`] = IMPORT_NAME
