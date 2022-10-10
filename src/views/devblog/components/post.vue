@@ -47,6 +47,21 @@ export default defineComponent({
 .post {
   .main-content {
     margin-top: 1em;
+
+    h2 {
+      margin-top: 10px;
+      margin-bottom: 10px;
+      font-size: 25px;
+    }
+
+    p {
+      margin-top: 10px;
+    }
+
+    ul {
+      margin-left: 25px;
+      list-style: disc;
+    }
   }
   .main-image {
     margin-top: 1em;

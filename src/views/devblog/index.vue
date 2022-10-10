@@ -13,7 +13,7 @@
       <div class="title-container">
         <div class="title">michael bitzos <span>[devblog]</span></div>
         <div class="subtitle is-5">
-          reflectin' on gamedev.
+          writin' about gamedev.
         </div>
       </div>
     </div>
