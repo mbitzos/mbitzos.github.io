@@ -48,10 +48,30 @@ export default defineComponent({
   .main-content {
     margin-top: 1em;
 
-    h2 {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
       margin-top: 10px;
       margin-bottom: 10px;
+    }
+
+    h2 {
       font-size: 25px;
+    }
+    h3 {
+      font-size: 22px;
+    }
+    h4 {
+      font-size: 20px;
+    }
+    h5 {
+      font-size: 17px;
+    }
+    h6 {
+      font-size: 15px;
     }
 
     p {

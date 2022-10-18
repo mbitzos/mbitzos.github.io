@@ -20,6 +20,9 @@ function markdownGenerator(rawPost) {
    */
   converter = new showdown.Converter()
   html = converter.makeHtml(rawPost);
+  html = html.replace(/\$IMAGE\:\{.*?\}/g,
+    a => `<PostImageComponent class="post-image" :image="${a.replace("$IMAGE:", "").replace(/"/g, "'")}" />`
+  )
   return config(postTemplate, { POST_TEXT: html });
 }
 
