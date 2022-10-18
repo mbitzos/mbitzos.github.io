@@ -16,12 +16,11 @@ const {
 } = require("./constants")
 const generators = require("./generators")
 
-
+/**
+ * Process arg into a map
+ * This covers args where we have keyword args
+ */
 function processArgs() {
-  /**
-   * Process arg into a map
-   * This covers args where we have keyword args
-   */
   const args = {}
   for (let arg of process.argv.slice(2)) {
     const [k, v] = arg.split("=")
@@ -37,12 +36,15 @@ const ARGS = processArgs()
 const SKIP_DATE_SETTING = ARGS["skip-date"]
 // if we only want to append new posts, ignore posts that were already generated
 const MODE = ARGS['mode'] || 'DIFF'
+if (MODE == "post" && !ARGS['post']) {
+  throw Error("Post must be provided for mode=post")
+}
 
 
+/**
+ * Generates the .ts meta file from the json
+ */
 function generateMetaFile(metaData, postName) {
-  /**
-   * Generates the .ts meta file from the json
-   */
   const IMPORT_KEY = "IMPORT_KEY"
   const DATE_KEY = "DATE_KEY"
   const IMPORT_NAME = "PostContent"
@@ -74,12 +76,12 @@ function generateMetaFile(metaData, postName) {
 }
 
 
+/**
+ * Converts raw post + meta data into static site pages
+ * takes the json data and dynamically creates the vue post component + meta data ts file
+ * using templating
+ */
 function generatePostPages() {
-  /**
-   * Converts raw post + meta data into static site pages
-   * takes the json data and dynamically creates the vue post component + meta data ts file
-   * using templating
-   */
 
   const postNames = []
 
@@ -95,12 +97,19 @@ function generatePostPages() {
   // generate per post
   for (const post of posts) {
     const [postName, postFileType] = getPostNameAndType(post)
+    postNames.push(postName)
 
     // diff mode, skip posts that already are generated
     if (MODE == "diff" && existingPosts.has(postName)) {
       console.log(`${postName} already exists, skipping`)
       continue
     }
+
+    // specific post mode
+    if (MODE == "post" && postName !== ARGS['post']) {
+      continue
+    }
+
 
     // get contents
     const postFileRaw = fs.readFileSync(path.join(RAW_POSTS_DIRECTORY, post), ENCODING)
@@ -125,17 +134,16 @@ function generatePostPages() {
     fs.writeFileSync(path.join(GEN_POSTS_DIRECTORY, postName + ".meta.ts"), newMetaFileContent)
     fs.writeFileSync(path.join(GEN_POSTS_DIRECTORY, postName + ".vue"), newPostContent)
 
-    postNames.push(postName)
   }
   return postNames
 
 }
 
+/**
+ * Generates the necessary index.ts import file for the posts
+ * This basically takes a template file and dynamically inserts all the posts generated from it
+ */
 function generatePostImports(posts) {
-  /**
-   * Generates the necessary index.ts import file for the posts
-   * This basically takes a template file and dynamically inserts all the posts generated from it
-   */
   const IMPORT_NAME = (i) => `post${i}`
   const IMPORT_TEMPLATE = (postName, i) => `import { default as ${IMPORT_NAME(i)} } from "./generated-posts/${postName}.meta";`;
 
@@ -152,16 +160,26 @@ function generatePostImports(posts) {
   fs.writeFileSync(importFilePath, newImportContent)
 }
 
+function clear() {
+  /**
+   * performs function clearing
+   */
+  if (MODE === "full") {
+    fsExtra.emptyDirSync(GEN_POSTS_DIRECTORY)
+  } else if (MODE === "post") {
+    fsExtra.unlinkSync(path.join(GEN_POSTS_DIRECTORY, ARGS['post'] + ".vue"))
+    fsExtra.unlinkSync(path.join(GEN_POSTS_DIRECTORY, ARGS['post'] + ".meta.ts"))
+  }
+
+}
+
 function main() {
   console.log("Starting static page generation...");
 
   console.log(`Starting with mode: ${MODE}`)
 
   // clear
-  if (MODE == "full") {
-    console.log("Clearing generation folder")
-    fsExtra.emptyDirSync(GEN_POSTS_DIRECTORY)
-  }
+  clear()
 
   // generation of post pages
   try {
