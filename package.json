@@ -12,6 +12,7 @@
   "dependencies": {
     "bulma": "^0.9.4",
     "core-js": "^3.6.5",
+    "highlight.js": "^11.6.0",
     "vue": "^3.0.0",
     "vue-router": "^4.0.0-0"
   },

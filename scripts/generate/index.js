@@ -167,8 +167,8 @@ function clear() {
   if (MODE === "full") {
     fsExtra.emptyDirSync(GEN_POSTS_DIRECTORY)
   } else if (MODE === "post") {
-    fsExtra.unlinkSync(path.join(GEN_POSTS_DIRECTORY, ARGS['post'] + ".vue"))
-    fsExtra.unlinkSync(path.join(GEN_POSTS_DIRECTORY, ARGS['post'] + ".meta.ts"))
+    fsExtra.rmSync(path.join(GEN_POSTS_DIRECTORY, ARGS['post'] + ".vue"), { force: true })
+    fsExtra.rmSync(path.join(GEN_POSTS_DIRECTORY, ARGS['post'] + ".meta.ts"), { force: true })
   }
 
 }

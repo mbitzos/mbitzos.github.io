@@ -27,7 +27,6 @@ export default defineComponent({
   },
   methods: {
     isSelected(post: Post) {
-      console.log(this.$route.name);
       return post.key == this.$route.name;
     }
   }

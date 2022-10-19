@@ -30,6 +30,7 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import PostImageComponent from "./image.vue";
+import hljs from "highlight.js";
 import { Post } from "@/types";
 export default defineComponent({
   components: {
@@ -40,6 +41,9 @@ export default defineComponent({
       type: Object as () => Post,
       required: true
     }
+  },
+  mounted() {
+    hljs.highlightAll();
   }
 });
 </script>
