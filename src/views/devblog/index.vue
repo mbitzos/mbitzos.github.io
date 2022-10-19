@@ -31,7 +31,7 @@
       <div id="sidebar-border" />
       <div id="sidebar-dot"></div>
       <div id="post-container">
-        <router-view />
+        <router-view :key="$route.fullPath" />
       </div>
     </div>
   </div>
