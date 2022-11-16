@@ -49,7 +49,7 @@
       This blog is for anyone with a decent understanding of programming who is
       struggling to make games because of the challenges they face writing
       clean, maintainable, and scalable code. There will be an overarching focus
-      on the art of making 2D games in the Unity engine.
+      on the technical skills of making 2D games in the Unity engine.
     </p>
     <p>
       With any luck, you can learn from some of the lessons I've learned so that
@@ -70,10 +70,13 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import PostImageComponent from "@/views/devblog/components/image.vue";
+import CodeBlock from "@/views/devblog/components/code.vue";
 export default defineComponent({
   components: {
     // eslint-disable-next-line vue/no-unused-components
-    PostImageComponent
+    PostImageComponent,
+    // eslint-disable-next-line vue/no-unused-components
+    CodeBlock
   }
 });
 </script>

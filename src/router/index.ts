@@ -25,7 +25,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: "/devblog",
     name: "devblog",
-    redirect: `/devblog/${defaultDevBlogPost.path}`,
+    redirect: `/devblog/introductions`,
     component: Devblog,
     children: devblogPaths
   },

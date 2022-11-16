@@ -26,7 +26,7 @@ Even though our projects weren't finished, there is still a thousand hours of ha
 
  My goal is to share my experiences as the lead programmer for my team as well as how I incorporated my education and professional experience as a software engineer into designing the systems for the various core gameplay frameworks, features, and mechanics needed for our projects.
 
-This blog is for anyone with a decent understanding of programming who is struggling to make games because of the challenges they face writing clean, maintainable, and scalable code. There will be an overarching focus on the art of making 2D games in the Unity engine.
+This blog is for anyone with a decent understanding of programming who is struggling to make games because of the challenges they face writing clean, maintainable, and scalable code. There will be an overarching focus on the technical skills of making 2D games in the Unity engine.
 
 With any luck, you can learn from some of the lessons I've learned so that your technical abilities are not the reason you can't complete your dream game.
 
