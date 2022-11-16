@@ -21,8 +21,8 @@ function markdownGenerator(rawPost) {
   converter = new showdown.Converter()
   html = converter.makeHtml(rawPost);
   // image component injection
-  html = html.replace(/\$IMAGE\:\{.*?\}/g,
-    a => `<PostImageComponent class="post-image" :image="${a.replace("$IMAGE:", "").replace(/"/g, "'")}" />`
+  html = html.replace(/\$IMAGE\$\:\{.*?\}/g,
+    a => `<PostImageComponent class="post-image" :image="${a.replace("$IMAGE$:", "").replace(/"/g, "'")}" />`
   )
   // code block component injection
   html = html.replace(/<pre><code/g, "<CodeBlock> <pre><code")

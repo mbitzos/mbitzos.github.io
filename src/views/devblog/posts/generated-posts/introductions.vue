@@ -69,6 +69,12 @@
 </template>
 <script lang="ts">
 import { defineComponent } from "vue";
-export default defineComponent({});
+import PostImageComponent from "@/views/devblog/components/image.vue";
+export default defineComponent({
+  components: {
+    // eslint-disable-next-line vue/no-unused-components
+    PostImageComponent
+  }
+});
 </script>
 <style lang="scss"></style>

@@ -1,0 +1,13 @@
+{
+  "title": "Using finite state machines to build scalable player controllers",
+  "tags": [
+    "code",
+    "c#",
+    "unity"
+  ],
+  "mainImage": {
+    "uri": "posts/fsm-player-controllers/cover.jpg",
+    "subtitle": "A very basic state machine for a platformer player controller"
+  },
+  "date": "2022-11-15T04:30:45.378Z"
+}

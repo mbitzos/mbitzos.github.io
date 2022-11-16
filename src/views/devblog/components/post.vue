@@ -63,7 +63,7 @@ export default defineComponent({
     }
 
     h2 {
-      font-size: 25px;
+      font-size: 30px;
     }
     h3 {
       font-size: 22px;
@@ -82,8 +82,12 @@ export default defineComponent({
       margin-top: 10px;
     }
 
+    ol,
     ul {
       margin-left: 25px;
+    }
+
+    ul {
       list-style: disc;
     }
   }

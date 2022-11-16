@@ -58,6 +58,7 @@ export default defineComponent({
 <style lang="scss">
 #devblog {
   width: 65%;
+  font-size: 18px;
   padding-top: 2em;
   padding-bottom: 2em;
   display: flex;
@@ -209,7 +210,7 @@ $sidebar-transition: 0.2s;
     flex-shrink: 0;
   }
   #post-container {
-    flex-grow: 1;
+    overflow: hidden;
   }
 
   #sidebar-container,
