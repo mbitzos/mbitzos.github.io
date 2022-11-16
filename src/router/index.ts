@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
+import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
 import Home from "../views/home/index.vue";
 import Devblog from "../views/devblog/index.vue";
 import Posts from "@/views/devblog/posts/index";
@@ -14,7 +14,6 @@ const devblogPaths: Array<RouteRecordRaw> = Posts.map((post: Post) => {
     props: { post }
   };
 });
-const defaultDevBlogPost = devblogPaths[0];
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -37,7 +36,7 @@ const routes: Array<RouteRecordRaw> = [
 ];
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHashHistory(),
   routes
 });
 
