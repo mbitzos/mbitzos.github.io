@@ -19,10 +19,12 @@
 import { defineComponent } from "@vue/runtime-core";
 import Posts from "../posts/index";
 import { Post } from "@/types";
+const posts = [...Posts];
+posts.reverse();
 export default defineComponent({
   data() {
     return {
-      articles: Posts
+      articles: posts
     };
   },
   methods: {

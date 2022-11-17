@@ -49,6 +49,9 @@ function generateMetaFile(metaData, postName) {
   const DATE_KEY = "DATE_KEY"
   const IMPORT_NAME = "PostContent"
 
+  // shallow copy
+  metaData = { ...metaData }
+
   const prevDate = metaData['date']
   if (!prevDate) {
     throw Error(`${postName} meta file does not contain a date and you opt'd to skip date setting. please add it manually in.`)
@@ -94,10 +97,19 @@ function generatePostPages() {
       .map(file => getPostNameAndType(file)[0])
   )
 
+  const postNameToPost = {}
+
   // generate per post
   for (const post of posts) {
     const [postName, postFileType] = getPostNameAndType(post)
     postNames.push(postName)
+
+    // get contents
+    const postFileRaw = fs.readFileSync(path.join(RAW_POSTS_DIRECTORY, post), ENCODING)
+    const metaFileName = path.join(RAW_POSTS_DIRECTORY, postName + ".meta.json")
+    const metaFile = JSON.parse(fs.readFileSync(metaFileName))
+
+    postNameToPost[postName] = metaFile
 
     // diff mode, skip posts that already are generated
     if (MODE == "diff" && existingPosts.has(postName)) {
@@ -109,12 +121,6 @@ function generatePostPages() {
     if (MODE == "post" && postName !== ARGS['post']) {
       continue
     }
-
-
-    // get contents
-    const postFileRaw = fs.readFileSync(path.join(RAW_POSTS_DIRECTORY, post), ENCODING)
-    const metaFileName = path.join(RAW_POSTS_DIRECTORY, postName + ".meta.json")
-    const metaFile = JSON.parse(fs.readFileSync(metaFileName))
 
     // Generation
     const generator = generators[postFileType]
@@ -133,8 +139,13 @@ function generatePostPages() {
     const newPostContent = generator(postFileRaw)
     fs.writeFileSync(path.join(GEN_POSTS_DIRECTORY, postName + ".meta.ts"), newMetaFileContent)
     fs.writeFileSync(path.join(GEN_POSTS_DIRECTORY, postName + ".vue"), newPostContent)
-
   }
+  // sort by date
+  postNames.sort((a, b) => {
+    const aDate = new Date(postNameToPost[a].date);
+    const bDate = new Date(postNameToPost[b].date);
+    return aDate - bDate;
+  })
   return postNames
 
 }

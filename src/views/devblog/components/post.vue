@@ -58,7 +58,7 @@ export default defineComponent({
     h4,
     h5,
     h6 {
-      margin-top: 10px;
+      margin-top: 30px;
       margin-bottom: 10px;
     }
 

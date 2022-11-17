@@ -10,8 +10,9 @@ Changes incoming...
 - [x] Responsive design
 - [ ] Article searching
 - [ ] better article sidebar
-- [ ] post specific generation
+- [x] post specific generation
 - [ ] better post playground?
 - [ ] tag system
+- [ ] analytics (aws lambda + aws gateway + postgres or something etc etc)
 
 so much more :)

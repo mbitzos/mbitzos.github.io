@@ -15,6 +15,8 @@ const devblogPaths: Array<RouteRecordRaw> = Posts.map((post: Post) => {
   };
 });
 
+const defaultPath = devblogPaths[0].path;
+
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
@@ -24,7 +26,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: "/devblog",
     name: "devblog",
-    redirect: `/devblog/introductions`,
+    redirect: `/devblog/${defaultPath}`,
     component: Devblog,
     children: devblogPaths
   },
