@@ -21,7 +21,7 @@ export default defineComponent({
   width: 100%;
   text-align: center;
   img {
-    width: auto;
+    width: 100%;
   }
 
   .subtitle {

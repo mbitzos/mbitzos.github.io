@@ -1,0 +1,12 @@
+{
+  "title": "Creating dynamic animations programmatically with Unity coroutines",
+  "tags": [
+    "code",
+    "c#",
+    "unity"
+  ],
+  "mainImage": {
+    "uri": "posts/programmatic-animation-using-coroutines/cover.png"
+  },
+  "date": "2022-12-11T02:22:18.484Z"
+}
