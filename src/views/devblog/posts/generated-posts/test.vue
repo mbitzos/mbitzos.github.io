@@ -1,0 +1,19 @@
+<template>
+  <div>
+    <p>test test</p>
+  </div>
+</template>
+<script lang="ts">
+import { defineComponent } from "vue";
+import PostImageComponent from "@/views/devblog/components/image.vue";
+import CodeBlock from "@/views/devblog/components/code.vue";
+export default defineComponent({
+  components: {
+    // eslint-disable-next-line vue/no-unused-components
+    PostImageComponent,
+    // eslint-disable-next-line vue/no-unused-components
+    CodeBlock
+  }
+});
+</script>
+<style lang="scss"></style>
