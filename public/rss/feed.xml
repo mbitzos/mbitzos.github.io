@@ -34,14 +34,6 @@
   <category>c#</category>
   <category>unity</category>
 </item>
-<item>
-  <link>https://michaelbitzos.com/#/devblog/test</link>
-  <title>Test title</title>
-  <description>Test desc</description>
-  <author>m.bitzos@gmail.com (Michael Bitzos)</author>
-  <guid>https://michaelbitzos.com/#/devblog/test</guid>
-  <category>misc</category>
-</item>
 </channel>
 
 </rss>
