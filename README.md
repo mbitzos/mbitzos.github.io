@@ -14,7 +14,7 @@ Changes incoming...
 - [ ] better post playground?
 - [ ] tag system
 - [ ] analytics (aws lambda + aws gateway + postgres or something etc etc)
-- [ ] RSS Feed
+- [x] RSS Feed
 - [ ] SEO optimizations
 
 so much more :)

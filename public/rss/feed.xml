@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+
+<channel>
+  <atom:link href="https://michaelbitzos.com/rss/feed.xml" rel="self" type="application/rss+xml" />
+  <title>Michael Bitzos gamedev blog</title>
+  <link>https://michaelbitzos.com/#/devblog</link>
+  <description>Writin' about my experience with game development.</description>
+<item>
+  <link>https://michaelbitzos.com/#/devblog/introductions</link>
+  <title>Introduction to my devblog</title>
+  <description>Welcome to my blog where I will be writing tutorials and posts about my experiences creating games with my team as the main programmer.</description>
+  <author>m.bitzos@gmail.com (Michael Bitzos)</author>
+  <guid>https://michaelbitzos.com/#/devblog/introductions</guid>
+  <category>misc</category>
+</item>
+<item>
+  <link>https://michaelbitzos.com/#/devblog/fsm-player-controllers</link>
+  <title>Using finite state machines to build scalable player controllers</title>
+  <description>Explaining how I use the finite state machine design model to write my player controllers to easily add features without sacrificing code quality.</description>
+  <author>m.bitzos@gmail.com (Michael Bitzos)</author>
+  <guid>https://michaelbitzos.com/#/devblog/fsm-player-controllers</guid>
+  <category>code</category>
+  <category>c#</category>
+  <category>unity</category>
+</item>
+<item>
+  <link>https://michaelbitzos.com/#/devblog/programmatic-animation-using-coroutines</link>
+  <title>Creating dynamic animations programmatically with Unity coroutines</title>
+  <description>How using coroutines in Unity allows you to create dynamic animations purely with code to build complex features quickly and easily.</description>
+  <author>m.bitzos@gmail.com (Michael Bitzos)</author>
+  <guid>https://michaelbitzos.com/#/devblog/programmatic-animation-using-coroutines</guid>
+  <category>code</category>
+  <category>c#</category>
+  <category>unity</category>
+</item>
+</channel>
+
+</rss>

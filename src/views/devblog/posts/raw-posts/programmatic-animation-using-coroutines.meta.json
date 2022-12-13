@@ -1,5 +1,6 @@
 {
   "title": "Creating dynamic animations programmatically with Unity coroutines",
+  "description": "How using coroutines in Unity allows you to create dynamic animations purely with code to build complex features quickly and easily.",
   "tags": [
     "code",
     "c#",

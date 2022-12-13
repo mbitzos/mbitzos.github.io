@@ -1,6 +1,7 @@
 type Post = {
   key: string; // used for route, should be kebabcased
-  title: string; // title of the post
+  title: string; // title of the post, used for the post, RSS, and SEO
+  description: string; // the description of the post, used for SEO and RSS
   date?: Date; // creation date of the post, will be auto generated
   mainImage?: PostImage; // main image of the post
   component?: any; // the actual component to render

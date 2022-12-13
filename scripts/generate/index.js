@@ -5,6 +5,7 @@ const fs = require("fs");
 const fsExtra = require('fs-extra');
 const path = require("path");
 const execa = require("execa");
+var xmlbulker = require('xmlbuilder');
 const { config, getPostNameAndType } = require("./utils");
 const {
   POSTS_DIRECTORY,
@@ -12,7 +13,10 @@ const {
   GEN_POSTS_DIRECTORY,
   ENCODING,
   metaFileTemplate,
-  importTemplate
+  fssFeedTemplate,
+  importTemplate,
+  DEVBLOG_HOME,
+  RSS_DIRECTORY,
 } = require("./constants")
 const generators = require("./generators")
 
@@ -78,6 +82,11 @@ function generateMetaFile(metaData, postName) {
   })
 }
 
+function getPostMetaFile(postName) {
+  const metaFileName = path.join(RAW_POSTS_DIRECTORY, postName + ".meta.json")
+  const metaFile = JSON.parse(fs.readFileSync(metaFileName))
+  return metaFile
+}
 
 /**
  * Converts raw post + meta data into static site pages
@@ -106,8 +115,7 @@ function generatePostPages() {
 
     // get contents
     const postFileRaw = fs.readFileSync(path.join(RAW_POSTS_DIRECTORY, post), ENCODING)
-    const metaFileName = path.join(RAW_POSTS_DIRECTORY, postName + ".meta.json")
-    const metaFile = JSON.parse(fs.readFileSync(metaFileName))
+    const metaFile = getPostMetaFile(postName)
 
     postNameToPost[postName] = metaFile
 
@@ -171,6 +179,41 @@ function generatePostImports(posts) {
   fs.writeFileSync(importFilePath, newImportContent)
 }
 
+/**
+ * Generates the RSS Feed to be in sync with our posts for RSS subscribers
+ */
+function generateRSSFeed(posts) {
+  // generates a single xml RSS item from a post
+  function generateRSSItem(postname, post) {
+    const item = xmlbulker.create("item", {
+      headless: true,
+    })
+    const link = `${DEVBLOG_HOME}${postname}`
+    item.ele("link", link)
+    item.ele("title", post.title)
+    item.ele("description", post.description)
+    item.ele("author", "m.bitzos@gmail.com (Michael Bitzos)")
+    item.ele("guid", link)
+    for (const tag of post.tags) {
+      item.ele("category", tag)
+    }
+    return item.end({ "pretty": true, "indent": "  " })
+  }
+  const fssFeedPath = path.join(RSS_DIRECTORY, "feed.xml")
+
+  // clear old
+  fs.rmSync(fssFeedPath, { force: true })
+
+  const items = posts
+    .map(postname => [postname, getPostMetaFile(postname)])
+    .map(postObj => generateRSSItem(...postObj))
+    .join("\n")
+  const newRSSContent = config(fssFeedTemplate, {
+    "ITEMS": items,
+  })
+  fs.writeFileSync(fssFeedPath, newRSSContent)
+}
+
 function clear() {
   /**
    * performs function clearing
@@ -187,7 +230,7 @@ function clear() {
 function main() {
   console.log("Starting static page generation...");
 
-  console.log(`Starting with mode: ${MODE}`)
+  console.log(`Starting with mode: ${MODE} `)
 
   // clear
   clear()
@@ -211,6 +254,16 @@ function main() {
     console.log("Imports complete");
   } catch (e) {
     console.log("Problem generating imports");
+    console.error(e);
+    process.exit(1);
+  }
+
+  try {
+    console.log("Generating RSS");
+    generateRSSFeed(posts);
+    console.log("RSS Feed complete");
+  } catch (e) {
+    console.log("Program generating RSS Feed");
     console.error(e);
     process.exit(1);
   }

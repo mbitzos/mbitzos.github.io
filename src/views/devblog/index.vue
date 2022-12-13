@@ -14,6 +14,11 @@
         <div class="title">michael bitzos <span>[devblog]</span></div>
         <div class="subtitle is-5">
           writin' about gamedev.
+          <span class="rss" title="Subscribe to RSS feed">
+            <a href="/rss/feed.xml" target="_blank">
+              <FontAwesomeIcon icon="fa-solid fa-rss" class="rss-btn" />
+            </a>
+          </span>
         </div>
       </div>
     </div>
@@ -39,9 +44,10 @@
 
 <script lang="ts">
 import sidebar from "./components/sidebar.vue";
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { defineComponent } from "vue";
 export default defineComponent({
-  components: { sidebar },
+  components: { sidebar, FontAwesomeIcon },
   data() {
     return {
       open: false
@@ -108,6 +114,10 @@ export default defineComponent({
         display: none;
       }
     }
+  }
+  .rss {
+    margin-left: 0.5em;
+    display: unset !important;
   }
 }
 

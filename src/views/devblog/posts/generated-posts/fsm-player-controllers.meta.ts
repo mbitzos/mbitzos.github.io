@@ -4,6 +4,8 @@ import PostContent from "./fsm-player-controllers.vue";
 
 const post: Post = markRaw({
   title: "Using finite state machines to build scalable player controllers",
+  description:
+    "Explaining how I use the finite state machine design model to write my player controllers to easily add features without sacrificing code quality.",
   tags: ["code", "c#", "unity"],
   mainImage: {
     uri: "posts/fsm-player-controllers/cover.jpg",
