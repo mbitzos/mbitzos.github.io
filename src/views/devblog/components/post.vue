@@ -29,12 +29,19 @@
 </template>
 <script lang="ts">
 import { defineComponent } from "vue";
+import { useMeta } from "vue-meta";
 import PostImageComponent from "./image.vue";
 import hljs from "highlight.js";
 import { Post } from "@/types";
 export default defineComponent({
   components: {
     PostImageComponent
+  },
+  setup(props) {
+    useMeta({
+      title: props.post.title,
+      description: props.post.description
+    });
   },
   props: {
     post: {

@@ -15,6 +15,6 @@ Changes incoming...
 - [ ] tag system
 - [ ] analytics (aws lambda + aws gateway + postgres or something etc etc)
 - [x] RSS Feed
-- [ ] SEO optimizations
+- [x] SEO optimizations
 
 so much more :)

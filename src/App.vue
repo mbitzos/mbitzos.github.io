@@ -1,10 +1,20 @@
 <template>
+  <metainfo />
   <router-view />
 </template>
 
 <script lang="ts">
+import { useMeta, useActiveMeta } from "vue-meta";
 import { defineComponent } from "vue";
 export default defineComponent({
+  setup() {
+    useMeta({
+      description:
+        "Welcome to my website where you can get my contact info and follow my game devblog.",
+      title: "Michael Bitzos",
+      ...useActiveMeta()
+    });
+  },
   methods: {
     hello() {
       console.log("hello and welcome to my website.");

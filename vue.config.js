@@ -6,6 +6,7 @@ module.exports = {
       }
     }
   },
+  transpileDependencies: ["vue-meta"],
   chainWebpack: config => {
     config.module
       .rule("xml")
