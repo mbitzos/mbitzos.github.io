@@ -1,4 +1,4 @@
-import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
+import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 import Home from "../views/home/index.vue";
 import Devblog from "../views/devblog/index.vue";
 import Posts from "@/views/devblog/posts/index";
@@ -38,8 +38,18 @@ const routes: Array<RouteRecordRaw> = [
 ];
 
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHistory(),
   routes
+});
+
+// redirect old hash urls
+router.beforeEach((to, _, next) => {
+  if (to.fullPath.substring(0, 2) === "/#") {
+    const path = to.fullPath.substr(2);
+    next(path);
+    return;
+  }
+  next();
 });
 
 export default router;
