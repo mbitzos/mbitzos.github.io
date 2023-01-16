@@ -7,29 +7,39 @@
   <link>https://michaelbitzos.com/#/devblog</link>
   <description>Writin' about my experience with game development.</description>
 <item>
-  <link>https://michaelbitzos.com/#/devblog/introductions</link>
+  <link>https://michaelbitzos.com/devblog/introductions</link>
   <title>Introduction to my devblog</title>
   <description>Welcome to my blog where I will be writing tutorials and posts about my experiences creating games with my team as the main programmer.</description>
   <author>m.bitzos@gmail.com (Michael Bitzos)</author>
-  <guid>https://michaelbitzos.com/#/devblog/introductions</guid>
+  <guid>https://michaelbitzos.com/devblog/introductions</guid>
   <category>misc</category>
 </item>
 <item>
-  <link>https://michaelbitzos.com/#/devblog/fsm-player-controllers</link>
+  <link>https://michaelbitzos.com/devblog/fsm-player-controllers</link>
   <title>Using finite state machines to build scalable player controllers</title>
   <description>Explaining how I use the finite state machine design model to write my player controllers to easily add features without sacrificing code quality.</description>
   <author>m.bitzos@gmail.com (Michael Bitzos)</author>
-  <guid>https://michaelbitzos.com/#/devblog/fsm-player-controllers</guid>
+  <guid>https://michaelbitzos.com/devblog/fsm-player-controllers</guid>
   <category>code</category>
   <category>c#</category>
   <category>unity</category>
 </item>
 <item>
-  <link>https://michaelbitzos.com/#/devblog/programmatic-animation-using-coroutines</link>
+  <link>https://michaelbitzos.com/devblog/programmatic-animation-using-coroutines</link>
   <title>Creating dynamic animations programmatically with Unity coroutines</title>
   <description>How using coroutines in Unity allows you to create dynamic animations purely with code to build complex features quickly and easily.</description>
   <author>m.bitzos@gmail.com (Michael Bitzos)</author>
-  <guid>https://michaelbitzos.com/#/devblog/programmatic-animation-using-coroutines</guid>
+  <guid>https://michaelbitzos.com/devblog/programmatic-animation-using-coroutines</guid>
+  <category>code</category>
+  <category>c#</category>
+  <category>unity</category>
+</item>
+<item>
+  <link>https://michaelbitzos.com/devblog/debug-settings-menu</link>
+  <title>Creating persistent in-game debug settings for rapid small-team development</title>
+  <description>Discussing how I created and utilized a debug tool to modify game settings at run-time to improve the efficiency of my team's development process.</description>
+  <author>m.bitzos@gmail.com (Michael Bitzos)</author>
+  <guid>https://michaelbitzos.com/devblog/debug-settings-menu</guid>
   <category>code</category>
   <category>c#</category>
   <category>unity</category>
