@@ -6,7 +6,7 @@ const fsExtra = require('fs-extra');
 const path = require("path");
 const execa = require("execa");
 var xmlbulker = require('xmlbuilder');
-const { config, getPostNameAndType } = require("./utils");
+const { config, getPostNameAndType, getMetaFileName, getPostMetaFile } = require("./utils");
 const {
   POSTS_DIRECTORY,
   RAW_POSTS_DIRECTORY,
@@ -82,12 +82,6 @@ function generateMetaFile(metaData, postName) {
   })
 }
 
-function getPostMetaFile(postName) {
-  const metaFileName = path.join(RAW_POSTS_DIRECTORY, postName + ".meta.json")
-  const metaFile = JSON.parse(fs.readFileSync(metaFileName))
-  return metaFile
-}
-
 /**
  * Converts raw post + meta data into static site pages
  * takes the json data and dynamically creates the vue post component + meta data ts file
@@ -140,7 +134,7 @@ function generatePostPages() {
     if (!SKIP_DATE_SETTING) {
       if (!metaFile['date']) {
         metaFile['date'] = new Date()
-        fs.writeFileSync(metaFileName, JSON.stringify(metaFile))
+        fs.writeFileSync(getMetaFileName(postName), JSON.stringify(metaFile))
       }
     }
     const newMetaFileContent = generateMetaFile(metaFile, postName)

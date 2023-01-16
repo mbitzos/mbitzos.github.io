@@ -13,7 +13,9 @@ Changes incoming...
 - [x] post specific generation
 - [ ] better post playground?
 - [ ] tag system
-- [ ] analytics (aws lambda + aws gateway + postgres or something etc etc)
+- [ ] analytics (google analytics)
+- [ ] sharing functionality w/ bitly or something
+  - [ ] Twitter
 - [x] RSS Feed
 - [x] SEO optimizations
 

@@ -1,3 +1,7 @@
+/* eslint-disable */
+const path = require("path");
+const fs = require("fs");
+const { RAW_POSTS_DIRECTORY } = require("./constants");
 /**
  * Returns post name and post file type
  */
@@ -17,4 +21,12 @@ function config(text, kvps, wrapKey = true) {
   }, text);
 }
 
-module.exports = { getPostNameAndType, config };
+function getMetaFileName(postName) {
+  return path.join(RAW_POSTS_DIRECTORY, postName + ".meta.json");
+}
+
+function getPostMetaFile(postName) {
+  return JSON.parse(fs.readFileSync(getMetaFileName(postName)))
+}
+
+module.exports = { getPostNameAndType, config, getMetaFileName, getPostMetaFile };

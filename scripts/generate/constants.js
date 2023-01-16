@@ -8,7 +8,7 @@ const PUBLIC_DIRECTORY = "public";
 const RSS_DIRECTORY = path.join(PUBLIC_DIRECTORY, "RSS")
 const RAW_POSTS_DIRECTORY = path.join(POSTS_DIRECTORY, "raw-posts");
 const GEN_POSTS_DIRECTORY = path.join(POSTS_DIRECTORY, "generated-posts");
-const DEVBLOG_HOME = "https://michaelbitzos.com/#/devblog/"
+const DEVBLOG_HOME = "https://michaelbitzos.com/devblog/"
 const ENCODING = "utf-8";
 
 // Files
