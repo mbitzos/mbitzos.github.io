@@ -10,7 +10,7 @@ import { createMetaManager } from "vue-meta";
 import VueGtag from "vue-gtag";
 import PrivacyMixin from "./views/privacy/mixins";
 
-const GA_TOKEN = process.env.GA_TOKEN;
+const GA_TOKEN = "G-XLGBPXHKLH"; // visible via network tab anyways...
 require("@/assets/main.scss");
 library.add(fas, far);
 createApp(App)
