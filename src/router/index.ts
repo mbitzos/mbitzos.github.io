@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 import Home from "../views/home/index.vue";
+import Privacy from "../views/privacy/index.vue";
 import Devblog from "../views/devblog/index.vue";
 import Posts from "@/views/devblog/posts/index";
 import { Post } from "@/types";
@@ -13,6 +14,12 @@ const devblogPaths: Array<RouteRecordRaw> = Posts.map((post: Post) => {
     component: PostComponent,
     props: { post }
   };
+});
+
+devblogPaths.push({
+  path: "privacy",
+  name: "privacy",
+  component: Privacy
 });
 
 const defaultPath = devblogPaths[0].path;

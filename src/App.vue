@@ -1,12 +1,20 @@
 <template>
   <metainfo />
   <router-view />
+  <div id="privacy">
+    <router-link to="/devblog/privacy">privacy</router-link>
+  </div>
+  <privacy-modal />
 </template>
 
 <script lang="ts">
 import { useMeta, useActiveMeta } from "vue-meta";
 import { defineComponent } from "vue";
+import PrivacyModal from "./views/privacy/privacy-modal.vue";
 export default defineComponent({
+  components: {
+    PrivacyModal
+  },
   setup() {
     useMeta({
       description:
@@ -43,5 +51,19 @@ export default defineComponent({
   font-family: "Akagi-Black";
   src: local("Akagi-Black"),
     url(./assets/fonts/AkagiPro-Black.ttf) format("truetype");
+}
+
+#privacy {
+  position: fixed;
+  @media only screen and (max-width: 1200px) {
+    position: absolute;
+    left: 50%;
+    bottom: 5px;
+    transform: translate(-50%, 0);
+    text-align: center;
+  }
+  right: 20px;
+  bottom: 5px;
+  opacity: 0.75;
 }
 </style>

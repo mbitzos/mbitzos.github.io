@@ -7,11 +7,20 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { fas } from "@fortawesome/free-solid-svg-icons";
 import { far } from "@fortawesome/free-regular-svg-icons";
 import { createMetaManager } from "vue-meta";
+import VueGtag from "vue-gtag";
+import PrivacyMixin from "./views/privacy/mixins";
 
+const GA_TOKEN = process.env.GA_TOKEN;
 require("@/assets/main.scss");
 library.add(fas, far);
 createApp(App)
   .use(router)
+  .use(VueGtag, {
+    config: {
+      id: GA_TOKEN
+    },
+    disabled: PrivacyMixin.methods.getAgreedState() !== "true"
+  })
   .use(createMetaManager())
   .component("font-awesome-icon", FontAwesomeIcon)
   .mount("#app");

@@ -9,6 +9,10 @@ $old-link: $link;
 $link: $pink;
 
 /** General **/
+#app {
+  position: absolute;
+}
+
 html,
 #app {
   margin: 0;
