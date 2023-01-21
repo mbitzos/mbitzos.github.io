@@ -15,12 +15,16 @@ require("@/assets/main.scss");
 library.add(fas, far);
 createApp(App)
   .use(router)
-  .use(VueGtag, {
-    config: {
-      id: GA_TOKEN
+  .use(
+    VueGtag,
+    {
+      config: {
+        id: GA_TOKEN
+      },
+      enabled: PrivacyMixin.methods.getAgreedState() === "true"
     },
-    disabled: PrivacyMixin.methods.getAgreedState() !== "true"
-  })
+    router
+  )
   .use(createMetaManager())
   .component("font-awesome-icon", FontAwesomeIcon)
   .mount("#app");
