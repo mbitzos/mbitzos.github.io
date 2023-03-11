@@ -705,13 +705,6 @@ public abstract class State {
       mechanics for your player while maintaining the integrity of your
       ever-expanding code.
     </p>
-    <p>
-      All of the code examples in this article can be found
-      <a
-        href="https://github.com/mbitzos/devblog-code-examples/tree/main/fsm-player-controllers"
-        >here on my GitHub.</a
-      >
-    </p>
   </div>
 </template>
 <script lang="ts">

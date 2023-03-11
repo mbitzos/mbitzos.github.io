@@ -23,3 +23,4 @@ pnpm-debug.log*
 *.sw?
 
 post-ideas.md
+src/views/devblog/posts/_draft

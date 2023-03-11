@@ -25,6 +25,19 @@
     />
     <div class="main-divider" />
     <component class="main-content" :is="post.component" />
+    <div v-if="ghLink">
+      <br />
+      Code can be found
+      <a :href="ghLink" target="_blank">here on my GitHub.</a>
+    </div>
+
+    <div>
+      <hr class="contact-me-line" />
+      <div>contact me:</div>
+      <a href="https://www.reddit.com/user/onelonelycarrot">reddit</a>
+      <br />
+      <a href="mailto:m.bitzos@gmail.com">email</a>
+    </div>
   </div>
 </template>
 <script lang="ts">
@@ -47,6 +60,14 @@ export default defineComponent({
     post: {
       type: Object as () => Post,
       required: true
+    }
+  },
+  computed: {
+    ghLink(): string | null {
+      if (!this.post.ghFolder) {
+        return null;
+      }
+      return `https://github.com/mbitzos/devblog-code-examples/tree/main/${this.post.ghFolder}`;
     }
   },
   mounted() {
@@ -124,6 +145,10 @@ export default defineComponent({
       color: gray;
       font-weight: bold;
     }
+  }
+  .contact-me-line {
+    background-color: rgba($pink, 0.3);
+    height: 1px;
   }
 }
 </style>

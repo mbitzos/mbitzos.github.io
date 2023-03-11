@@ -12,6 +12,7 @@ const post: Post = markRaw({
     subtitle: "A very basic state machine for a platformer player controller"
   },
   date: new Date("2022-11-15T04:30:45.378Z"),
+  ghFolder: "fsm-player-controllers",
   component: PostContent,
   key: "fsm-player-controllers"
 });

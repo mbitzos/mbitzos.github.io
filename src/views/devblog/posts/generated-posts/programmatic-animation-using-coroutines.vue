@@ -480,14 +480,6 @@ IEnumerator softFlicker(float idleTime) {
       animations.
     </p>
     <p>
-      All of the code examples can be found
-      <a
-        href="https://github.com/mbitzos/devblog-code-examples/tree/main/programmatic-animation-using-coroutines"
-        target="_blank"
-        >here on my GitHub.</a
-      >
-    </p>
-    <p>
       All of the pixel art shown was created by our artist for various games
       we've worked on,
       <a href="https://www.artstation.com/pixelgrim" target="_blank"

@@ -666,13 +666,6 @@ public Attack() {
       provided us quicker feedback for scraping a feature so that we could move
       on to newer and better ideas.
     </p>
-    <p>
-      All of the code in this article can be found
-      <a
-        href="https://github.com/mbitzos/devblog-code-examples/tree/main/debug-settings-menu"
-        >here on my GitHub.</a
-      >
-    </p>
     <h2 id="afterword">Afterword</h2>
     <p>
       I first created the debug settings framework for my team about 2 years ago

@@ -9,6 +9,7 @@ const post: Post = markRaw({
     "Discussing how I created and utilized a debug tool to modify game settings at run-time to improve the efficiency of my team's development process.",
   tags: ["code", "c#", "unity"],
   mainImage: { uri: "posts/debug-settings-menu/cover.png" },
+  ghFolder: "debug-settings-menu",
   date: new Date("2023-01-15T17:59:36.651Z"),
   component: PostContent,
   key: "debug-settings-menu"

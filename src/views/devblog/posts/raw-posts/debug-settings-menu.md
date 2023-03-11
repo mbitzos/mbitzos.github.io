@@ -512,8 +512,6 @@ $IMAGE$:{"uri":"posts/debug-settings-menu/settings-example.gif", "subtitle":"A s
 
 Spending the efforts to streamline this process proved to our team how fast development can be while still allowing everyone to provide their own meaningful individual feedback. Building a persistent debug menu helped my team and I quickly bring a feature from concept to polish. It also provided us quicker feedback for scraping a feature so that we could move on to newer and better ideas.
 
-All of the code in this article can be found <a href="https://github.com/mbitzos/devblog-code-examples/tree/main/debug-settings-menu">here on my GitHub.</a>
-
 
 ## Afterword
 

@@ -10,5 +10,6 @@
     "uri": "posts/fsm-player-controllers/cover.jpg",
     "subtitle": "A very basic state machine for a platformer player controller"
   },
-  "date": "2022-11-15T04:30:45.378Z"
+  "date": "2022-11-15T04:30:45.378Z",
+  "ghFolder": "fsm-player-controllers"
 }

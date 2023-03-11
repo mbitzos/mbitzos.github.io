@@ -61,10 +61,6 @@
       If you continue to read this blog, thank you for following me, hopefully
       reading about my challenges will help you overcome yours.
     </p>
-    <p>
-      If you have any questions feel free to contact me:
-      <a href="mailto:m.bitzos@gmail.com">m.bitzos@gmail.com</a>
-    </p>
   </div>
 </template>
 <script lang="ts">

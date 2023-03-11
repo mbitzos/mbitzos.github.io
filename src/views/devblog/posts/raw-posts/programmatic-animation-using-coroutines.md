@@ -285,6 +285,4 @@ Simply having the ability to edit public/serializable variables for my animation
 
 Coroutines are a very powerful tool that allow you to quickly create dynamic animations with none of the compromise. If you’ve ever felt the time sink of creating animated events using the Unity Animator, I hope that this article will help you see things from a programmatic perspective and unshackle yourself from the limitations of statically defined animations. 
 
-All of the code examples can be found <a href="https://github.com/mbitzos/devblog-code-examples/tree/main/programmatic-animation-using-coroutines" target="_blank">here on my GitHub.</a>
-
 All of the pixel art shown was created by our artist for various games we've worked on, <a href="https://www.artstation.com/pixelgrim" target="_blank">check out his artstation</a>.

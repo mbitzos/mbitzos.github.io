@@ -523,5 +523,3 @@ public abstract class State {
 ## Conclusion
 
 It is entirely possible to make a game with a single script for your player controller and it is not the determining factor for your games completion or success. Celeste is an example of a successful title <a href="https://github.com/NoelFB/Celeste/blob/master/Source/Player/Player.cs">that has a single 5400 lined player controller script,</a> but I have no doubt there were great difficulties revolving around this. While it is not the only or last example of this, every step we can make as developers to improve our technical skills will result in fewer times we are limited in creating the dream game we all desire to make. Using FSMs is but just one example of doing so by designing a robust player controller that allows you to develop easily understandable yet complex mechanics for your player while maintaining the integrity of your ever-expanding code.
-
-All of the code examples in this article can be found <a href="https://github.com/mbitzos/devblog-code-examples/tree/main/fsm-player-controllers">here on my GitHub.</a>

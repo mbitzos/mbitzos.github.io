@@ -34,6 +34,4 @@ With any luck, you can learn from some of the lessons I've learned so that your 
 
 If you continue to read this blog, thank you for following me, hopefully reading about my challenges will help you overcome yours.
 
-If you have any questions feel free to contact me: [m.bitzos@gmail.com](mailto:m.bitzos@gmail.com)
-
 

@@ -6,6 +6,7 @@ type Post = {
   mainImage?: PostImage; // main image of the post
   component?: any; // the actual component to render
   tags?: string[];
+  ghFolder?: string; // the link to the github attached for this article, relative to "https://github.com/mbitzos/devblog-code-examples/tree/main/"
 };
 type Style = Record<string, string>;
 
