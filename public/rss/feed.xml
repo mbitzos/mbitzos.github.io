@@ -44,6 +44,16 @@
   <category>c#</category>
   <category>unity</category>
 </item>
+<item>
+  <link>https://michaelbitzos.com/devblog/implementing-stairs-in-2d-top-down-games</link>
+  <title>Implementing satisfying stairs for your 2D top-down game</title>
+  <description>Implementing a reusable component for stairs for your 2D top-down games to create satisfying movement within your levels.</description>
+  <author>m.bitzos@gmail.com (Michael Bitzos)</author>
+  <guid>https://michaelbitzos.com/devblog/implementing-stairs-in-2d-top-down-games</guid>
+  <category>code</category>
+  <category>c#</category>
+  <category>unity</category>
+</item>
 </channel>
 
 </rss>
