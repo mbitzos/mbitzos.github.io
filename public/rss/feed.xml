@@ -12,6 +12,7 @@
   <description>Welcome to my blog where I will be writing tutorials and posts about my experiences creating games with my team as the main programmer.</description>
   <author>m.bitzos@gmail.com (Michael Bitzos)</author>
   <guid>https://michaelbitzos.com/devblog/introductions</guid>
+  <pubDate>Mon, 10 Oct 2022 16:42:08 GMT</pubDate>
   <category>misc</category>
 </item>
 <item>
@@ -20,6 +21,7 @@
   <description>Explaining how I use the finite state machine design model to write my player controllers to easily add features without sacrificing code quality.</description>
   <author>m.bitzos@gmail.com (Michael Bitzos)</author>
   <guid>https://michaelbitzos.com/devblog/fsm-player-controllers</guid>
+  <pubDate>Tue, 15 Nov 2022 04:30:45 GMT</pubDate>
   <category>code</category>
   <category>c#</category>
   <category>unity</category>
@@ -30,6 +32,7 @@
   <description>How using coroutines in Unity allows you to create dynamic animations purely with code to build complex features quickly and easily.</description>
   <author>m.bitzos@gmail.com (Michael Bitzos)</author>
   <guid>https://michaelbitzos.com/devblog/programmatic-animation-using-coroutines</guid>
+  <pubDate>Sun, 11 Dec 2022 02:22:18 GMT</pubDate>
   <category>code</category>
   <category>c#</category>
   <category>unity</category>
@@ -40,6 +43,7 @@
   <description>Discussing how I created and utilized a debug tool to modify game settings at run-time to improve the efficiency of my team's development process.</description>
   <author>m.bitzos@gmail.com (Michael Bitzos)</author>
   <guid>https://michaelbitzos.com/devblog/debug-settings-menu</guid>
+  <pubDate>Sun, 15 Jan 2023 17:59:36 GMT</pubDate>
   <category>code</category>
   <category>c#</category>
   <category>unity</category>
@@ -50,6 +54,7 @@
   <description>Implementing a reusable component for stairs for your 2D top-down games to create satisfying movement within your levels.</description>
   <author>m.bitzos@gmail.com (Michael Bitzos)</author>
   <guid>https://michaelbitzos.com/devblog/implementing-stairs-in-2d-top-down-games</guid>
+  <pubDate>Sun, 12 Mar 2023 03:40:04 GMT</pubDate>
   <category>code</category>
   <category>c#</category>
   <category>unity</category>

@@ -188,6 +188,7 @@ function generateRSSFeed(posts) {
     item.ele("description", post.description)
     item.ele("author", "m.bitzos@gmail.com (Michael Bitzos)")
     item.ele("guid", link)
+    item.ele("pubDate", new Date(post.date).toUTCString())
     for (const tag of post.tags) {
       item.ele("category", tag)
     }

@@ -10,6 +10,8 @@ Changes incoming...
 - [x] Responsive design
 - [ ] Article searching
 - [ ] better article sidebar
+- [ ] sticky sidebar
+- [ ] post creation CLI
 - [x] post specific generation
 - [ ] better post playground?
 - [ ] tag system
