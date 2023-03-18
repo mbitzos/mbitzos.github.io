@@ -11,7 +11,7 @@ Changes incoming...
 - [ ] Article searching
 - [ ] better article sidebar
 - [ ] sticky sidebar
-- [ ] post creation CLI
+- [x] post creation CLI
 - [x] post specific generation
 - [ ] better post playground?
 - [ ] tag system

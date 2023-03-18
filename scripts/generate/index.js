@@ -19,19 +19,7 @@ const {
   RSS_DIRECTORY,
 } = require("./constants")
 const generators = require("./generators")
-
-/**
- * Process arg into a map
- * This covers args where we have keyword args
- */
-function processArgs() {
-  const args = {}
-  for (let arg of process.argv.slice(2)) {
-    const [k, v] = arg.split("=")
-    args[k] = v ?? true
-  }
-  return args
-}
+const { processArgs } = require("../utils")
 
 const ARGS = processArgs()
 

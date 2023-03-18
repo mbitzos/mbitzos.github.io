@@ -7,7 +7,8 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "deploy": "node scripts/deploy.js",
-    "generate": "node scripts/generate/index.js"
+    "generate": "node scripts/generate/index.js",
+    "post": "node scripts/create-post/index.js"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.2.1",
