@@ -59,6 +59,17 @@
   <category>c#</category>
   <category>unity</category>
 </item>
+<item>
+  <link>https://michaelbitzos.com/devblog/demystifying-game-persistence</link>
+  <title>Demystifying game persistence with serialization</title>
+  <description>Uncovering the technical mystery of how games remember a player's progress.</description>
+  <author>m.bitzos@gmail.com (Michael Bitzos)</author>
+  <guid>https://michaelbitzos.com/devblog/demystifying-game-persistence</guid>
+  <pubDate>Mon, 04 Sep 2023 23:12:18 GMT</pubDate>
+  <category>code</category>
+  <category>c#</category>
+  <category>unity</category>
+</item>
 </channel>
 
 </rss>

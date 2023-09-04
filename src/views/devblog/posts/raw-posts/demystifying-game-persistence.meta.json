@@ -1,0 +1,14 @@
+{
+  "title": "Demystifying game persistence with serialization",
+  "description": "Uncovering the technical mystery of how games remember a player's progress.",
+  "tags": [
+    "code",
+    "c#",
+    "unity"
+  ],
+  "mainImage": {
+    "uri": "posts/demystifying-game-persistence/cover.png"
+  },
+  "ghFolder": "demystifying-game-persistence",
+  "date": "2023-09-04T23:12:18.780Z"
+}
