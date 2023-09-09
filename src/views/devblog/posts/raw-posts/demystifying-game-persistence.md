@@ -14,7 +14,7 @@ The concept of saving and loading is actually a real simple concept once you und
 
 *Serialization is the process of converting your in-memory objects into bytes such that they can be read/written to disk, allowing them to "exist" even after program execution. Deserialization is conversely the process of taking those bytes from disk, and reconstructing the "same" objects in memory during run-time.*
 
-$IMAGE$:{"uri":"posts/demystifying-game-persistence/diagram.png", }
+$IMAGE$:{"uri":"posts/demystifying-game-persistence/serialization_diagram.png"}
 
 You can start to see how this concept is the crux of saving/loading game state. At the end of the day, your game state is defined by a set of data structures in memory, and persisting them to keep state is just a matter of how you manage and integrate the serialization/deserialization of those objects.
 
@@ -238,11 +238,15 @@ During save, the `SaveManager` basically does this:
 5. Overwrite/add the `SaveData.scenes[currentSceneIndex]` with the new `SceneData`.
 6. Serialize and write the `SavaData` object to disk.
 
+$IMAGE$:{"uri":"posts/demystifying-game-persistence/save_diagram.png"}
+
 During load, the `SaveManager` does something similar:
 1. Fetch the save file via ID (if we are loading the latest, we will just fetch the latest ID stored using PlayerPrefs).
 2. Load the save file, and deserialize the `SaveData` from the file.
 3. Get the `SceneData` from `SaveData.scenes[currentSceneIndex]`.
 4. Get all `Saver` objects and call `.load` with its associated `ObjectData` found in `SceneData.objects` using the same `SaveId`.
+
+$IMAGE$:{"uri":"posts/demystifying-game-persistence/load_diagram.png"}
 
 As we can see, it's actually quite simple once you abstract everything into their own components.
 
@@ -377,6 +381,9 @@ public class SaveManager : MonoBehaviour {
   }
 }
 ```
+
+
+$IMAGE$:{"uri":"posts/demystifying-game-persistence/architecture_diagram.png", "subtitle": "A visual interpretation of the components in the persistence engine and their relationships."}
 
 #### IEnumerator?
 

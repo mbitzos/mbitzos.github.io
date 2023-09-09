@@ -11,6 +11,7 @@ Changes incoming...
 - [ ] Article searching
 - [ ] better article sidebar
 - [ ] sticky sidebar
+- [ ] article changelog
 - [x] post creation CLI
 - [x] post specific generation
 - [ ] better post playground?

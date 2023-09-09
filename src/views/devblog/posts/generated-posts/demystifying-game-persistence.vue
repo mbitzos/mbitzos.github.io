@@ -65,7 +65,9 @@
     <p>
       <PostImageComponent
         class="post-image"
-        :image="{ uri: 'posts/demystifying-game-persistence/diagram.png' }"
+        :image="{
+          uri: 'posts/demystifying-game-persistence/serialization_diagram.png'
+        }"
       />
     </p>
     <p>
@@ -436,6 +438,12 @@ public abstract class Saver : MonoBehaviour {
       </li>
       <li>Serialize and write the <code>SavaData</code> object to disk.</li>
     </ol>
+    <p>
+      <PostImageComponent
+        class="post-image"
+        :image="{ uri: 'posts/demystifying-game-persistence/save_diagram.png' }"
+      />
+    </p>
     <p>During load, the <code>SaveManager</code> does something similar:</p>
     <ol>
       <li>
@@ -456,6 +464,12 @@ public abstract class Saver : MonoBehaviour {
         <code>SceneData.objects</code> using the same <code>SaveId</code>.
       </li>
     </ol>
+    <p>
+      <PostImageComponent
+        class="post-image"
+        :image="{ uri: 'posts/demystifying-game-persistence/load_diagram.png' }"
+      />
+    </p>
     <p>
       As we can see, it's actually quite simple once you abstract everything
       into their own components.
@@ -591,6 +605,16 @@ public class SaveManager : MonoBehaviour {
 }
 </code></pre>
     </CodeBlock>
+    <p>
+      <PostImageComponent
+        class="post-image"
+        :image="{
+          uri: 'posts/demystifying-game-persistence/architecture_diagram.png',
+          subtitle:
+            'A visual interpretation of the components in the persistence engine and their relationships.'
+        }"
+      />
+    </p>
     <h4 id="ienumerator">IEnumerator?</h4>
     <p>
       Throughout the <code>SaveManager</code> you'll notice that almost
