@@ -130,7 +130,7 @@ public class Stairs : MonoBehaviour {
   void OnTriggerEnter2D(Collider2D other) {
     PlayerController player = other.gameObject.GetComponent<PlayerController>();
     if (player) {
-      player.Stairs.Push(this);
+      player.CurrentStairs.Push(this);
     }
   }
 
@@ -138,7 +138,7 @@ public class Stairs : MonoBehaviour {
   void OnTriggerExit2D(Collider2D other) {
     PlayerController player = other.gameObject.GetComponent<PlayerController>();
     if (player) {
-      player.Stairs.Pop();
+      player.CurrentStairs.Pop();
     }
   }
 
@@ -155,7 +155,7 @@ public class PlayerController : MonoBehaviour {
   const float StairSlowDownYPos = 0.8f;
   const float StairSlowDownYNeg = 0.6f;
 
-  public Stack<Stairs> Stairs = new Stack<>();
+  public Stack<Stairs> CurrentStairs = new Stack<Stairs>();
 
   /// <summary>
   /// Function that controls the actual movement
@@ -169,7 +169,7 @@ public class PlayerController : MonoBehaviour {
     pos += newMovement;
 
     // set position
-    SetPosition(pos);
+    transform.position = pos;
   }
 
   /// <summary>
@@ -182,7 +182,7 @@ public class PlayerController : MonoBehaviour {
     // exit early
     if (Stairs.Count == 0) return movement;
 
-    Stairs stairs = Stairs.Peek();
+    Stairs stairs = CurrentStairs.Peek();
     Vector2 stairsDirection = stairs.GetDirection();
 
     // apply slows for vertical direction
