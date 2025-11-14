@@ -21,5 +21,3 @@ Changes incoming...
   - [ ] Twitter
 - [x] RSS Feed
 - [x] SEO optimizations
-
-so much more :)
