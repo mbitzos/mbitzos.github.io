@@ -60,15 +60,18 @@
             >
             for a while.
           </div>
+          <div>
+            check out what i've worked on <a href="/overlook-studios">here</a>.
+          </div>
         </div>
       </div>
       <div class="icon-container row">
         <div id="unity">
           <img src="@/assets/about/unity-logo.png" />
         </div>
-        <div id="overlook">
+        <a id="overlook" href="/overlook-studios">
           <img src="@/assets/about/os-logo.png" />
-        </div>
+        </a>
       </div>
     </div>
     <hr id="hr-3" />

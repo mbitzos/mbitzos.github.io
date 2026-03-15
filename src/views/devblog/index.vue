@@ -21,6 +21,7 @@
           </span>
         </div>
       </div>
+      <a href="/overlook-studios" id="overlook-link">overlook studios</a>
     </div>
     <div id="navbar-border" />
     <div id="navbar-border" class="second" />
@@ -71,9 +72,24 @@ export default defineComponent({
   flex-direction: column;
   justify-content: flex-start;
 }
+#overlook-link {
+  margin-left: auto;
+  margin-right: 15px;
+  white-space: nowrap;
+  flex-shrink: 0;
+
+  @media screen and (max-width: 600px) {
+    margin-left: 0;
+    padding-left: 15px;
+    padding-bottom: 8px;
+    width: 100%;
+  }
+}
+
 #navbar {
   justify-content: flex-start;
   flex-direction: row;
+  flex-wrap: wrap;
   display: flex;
   align-items: center;
   padding-bottom: 10px;

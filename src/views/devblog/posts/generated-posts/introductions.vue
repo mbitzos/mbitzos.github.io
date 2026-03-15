@@ -8,7 +8,7 @@
     </p>
     <h2 id="background">Background</h2>
     <p>
-      My friends and I formed an indie game studio called Overlook Studios
+      My friends and I formed an indie game studio called <a href="/overlook-studios">Overlook Studios</a>
       during our third year of university and began working on 2D games in
       Unity. With a seemingly endless supply of motivation and creativity, we
       were driven by passion and the desire to learn how to make games.
