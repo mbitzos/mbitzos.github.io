@@ -1,2 +1,3 @@
+/overlook-studios https://overlookstudios.netlify.app/overlook-studios/ 200
 /overlook-studios/* https://overlookstudios.netlify.app/overlook-studios/:splat 200
 /* /index.html 200
