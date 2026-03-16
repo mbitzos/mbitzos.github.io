@@ -1,3 +1,5 @@
 /overlook-studios https://overlookstudios.netlify.app/overlook-studios/ 200
 /overlook-studios/* https://overlookstudios.netlify.app/overlook-studios/:splat 200
+/bonfire https://bonfire-group.netlify.app/invite/ 200
+/bonfire/* https://bonfire-group.netlify.app/invite/:splat 200
 /* /index.html 200
